@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dream Destination - Personal Guidance</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #fefcf7;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* ===== HEADER / NAV ===== */
+    header.site-header {
+      background: rgba(218, 165, 32, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+    }
+
+    header.site-header img {
+      height: 60px;
+      border-radius: 8px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+    }
+
+    nav a:hover {
+      background: white;
+      color: goldenrod;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: goldenrod;
+      transform: scale(1.2);
+    }
+
+    /* ===== CONTAINER ===== */
+    .container {
+      max-width: 1300px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: goldenrod;
+      font-size: 26px;
+      letter-spacing: 1px;
+    }
+
+    /* ===== PACKAGES ===== */
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      padding: 18px;
+      text-align: center;
+      border: 1px solid rgba(218,165,32,0.2);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .card-content h3 {
+      margin: 12px 0;
+      font-size: 20px;
+      color: #444;
+    }
+
+    .price {
+      color: #0077b6;
+      font-weight: bold;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    .card button {
+      background: goldenrod;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-weight: bold;
+    }
+
+    .card button:hover {
+      background: #b8860b;
+    }
+
+    /* ===== FORM ===== */
+    form {
+      max-width: 550px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      border: 1px solid rgba(218,165,32,0.25);
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    form input:focus, form textarea:focus {
+      border-color: goldenrod;
+      outline: none;
+      box-shadow: 0 0 10px rgba(218,165,32,0.5);
+    }
+
+    form button {
+      background: goldenrod;
+      border: none;
+      color: white;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      width: 100%;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background: #b8860b;
+    }
+
+    /* ===== REVIEWS ===== */
+    .reviews {
+      margin-top: 50px;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin: 40px auto;
+      max-width: 1200px;
+      padding: 0 10px;
+    }
+
+    .review-card {
+      background: #fffdf5;
+      border-left: 6px solid goldenrod;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+
+    .review-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .stars {
+      color: gold;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    /* ===== GUIDES ===== */
+    .guides {
+      margin-top: 60px;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .member {
+      background: white;
+      border: 1px solid rgba(218,165,32,0.25);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .member:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
+
+    .member img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid goldenrod;
+      margin-bottom: 15px;
+    }
+
+    .member h3 {
+      margin: 10px 0 5px;
+      color: goldenrod;
+    }
+
+    .member p {
+      margin: 6px 0;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+      margin-top: 60px;
+      border-top: 4px solid goldenrod;
+    }
+
+    .footer-links {
+      margin: 15px 0;
+    }
+
+    .footer-links a {
+      color: #ffd700;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+
+    /* ===== CHATBOX ===== */
+    #chat-toggle-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0077b6;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      z-index: 1001;
+      transition: transform 0.2s;
+    }
+
+    #chat-toggle-btn:hover {
+      transform: scale(1.05);
+    }
+
+    #ai-chatbox {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 320px;
+      height: 420px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 1000;
+      border: 1px solid #ccc;
+    }
+
+    #ai-chatbox header {
+      background: goldenrod;
+      color: white;
+      padding: 12px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 12px;
+      overflow-y: auto;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      background: #fafafa;
+      scroll-behavior: smooth;
+    }
+
+    .bot-message {
+      background: #f1f1f1;
+      padding: 9px 13px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      max-width: 80%;
+    }
+
+    .user-message {
+      background: #0077b6;
+      color: white;
+      padding: 9px 13px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      max-width: 80%;
+      align-self: flex-end;
+    }
+
+    #ai-chatbox input {
+      border: none;
+      border-top: 1px solid #ccc;
+      padding: 12px;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    #ai-chatbox button {
+      background: #0077b6;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    #ai-chatbox button:hover {
+      background: #005f8a;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <img src="dd.jpg" alt="Dream Destination Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="destination.html">Destinations</a>
+      <a href="guide.html">Personal Guide</a>
+      <a href="contact.html">Contact</a>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== CONTENT ===== -->
+  <div class="container">
+    <h2>Get Personal Travel Guidance</h2>
+    <p style="text-align:center;max-width:700px;margin:auto;">
+      Our travel experts can help you plan your dream trip. Share your interests, and we’ll suggest the perfect destinations.
+    </p>
+
+    <!-- FORM -->
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Tell us about your travel interests"></textarea>
+      <button type="submit">Get Advice</button>
+    </form>
+
+    <!-- PACKAGES -->
+    <h2>Popular Packages</h2>
+    <div class="packages">
+       <div class="card"><div class="card-content"><h3>Taj Mahal, Agra</h3><p class="price">₹15,000 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Kerala Backwaters</h3><p class="price">₹18,500 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Leh Ladakh</h3><p class="price">₹22,000 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Goa Beaches</h3><p class="price">₹12,000 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Golden Temple, Amritsar</h3><p class="price">₹10,000 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Mysore Palace</h3><p class="price">₹9,500 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Hampi Ruins</h3><p class="price">₹11,000 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Meenakshi Temple, Madurai</h3><p class="price">₹8,000 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Sundarbans Safari</h3><p class="price">₹14,000 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Charminar, Hyderabad</h3><p class="price">₹7,500 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Jaipur Royal Tour</h3><p class="price">₹13,000 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Kolkata Heritage Walk</h3><p class="price">₹9,000 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Ooty Hill Retreat</h3><p class="price">₹10,500 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Andaman Islands</h3><p class="price">₹25,000 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Ranthambore Safari</h3><p class="price">₹16,000 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Shimla Snow Escape</h3><p class="price">₹13,500 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Kaziranga Wildlife</h3><p class="price">₹17,000 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Munnar Tea Trails</h3><p class="price">₹11,500 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Coorg Coffee Escape</h3><p class="price">₹10,000 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Chennai Cultural Tour</h3><p class="price">₹8,500 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Udaipur Lakeside</h3><p class="price">₹12,800 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Darjeeling Himalayan Escape</h3><p class="price">₹12,500 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Varanasi Spiritual Sojourn</h3><p class="price">₹9,800 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Spiti Valley Adventure</h3><p class="price">₹19,000 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Mount Abu Hill Retreat</h3><p class="price">₹11,200 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Udaipur Lakeside Romance</h3><p class="price">₹13,800 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Cherrapunji Rainforest Trek</h3><p class="price">₹14,500 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Ajanta & Ellora Caves</h3><p class="price">₹10,800 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Rishikesh Yoga Retreat</h3><p class="price">₹9,200 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Mahabalipuram Heritage Tour</h3><p class="price">₹8,700 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Alleppey Houseboat Cruise</h3><p class="price">₹13,000 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Bodh Gaya Pilgrimage</h3><p class="price">₹8,900 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Manali Mountain Retreat</h3><p class="price">₹14,200 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Khajuraho Temple Tour</h3><p class="price">₹10,500 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Nainital Lakeside Escape</h3><p class="price">₹12,300 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Pushkar Camel Fair</h3><p class="price">₹11,000 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Chikmagalur Coffee Trails</h3><p class="price">₹10,800 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Andaman Freedom Trail</h3><p class="price">₹17,500 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Valley of Flowers Trek</h3><p class="price">₹15,800 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Bishnupur Terracotta Trail</h3><p class="price">₹9,400 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Sikkim Himalayan Circuit</h3><p class="price">₹18,200 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Patiala Royal Heritage</h3><p class="price">₹9,900 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Rann of Kutch Festival</h3><p class="price">₹16,000 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Old Delhi Food Walk</h3><p class="price">₹7,800 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Elephanta Island Tour</h3><p class="price">₹8,500 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Kanha Jungle Safari</h3><p class="price">₹15,000 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Chandigarh Architecture Tour</h3><p class="price">₹9,600 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Shillong Music & Culture</h3><p class="price">₹13,200 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Gwalior Fort & Legends</h3><p class="price">₹10,200 / person</p><button>Book Now</button></div></div>
+    <div class="card"><div class="card-content"><h3>Trivandrum Temple Trail</h3><p class="price">₹9,000 / person</p><button>Book Now</button></div></div>
+
+
+     </div>
+
+    <!-- REVIEWS -->
+    <div class="reviews">
+      <h2>What Our Clients Say</h2>
+      <div class="review-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Amazing guidance! My trip was smooth and stress-free."</p>
+          <p><strong>- Priya S.</strong></p>
+        </div>
+<div class="review-card"><div class="stars">★★★★★</div><p>"Our trip to Leh Ladakh was beyond breathtaking."</p><strong>- Neha & Arjun</strong></div>
+    <div class="review-card"><div class="stars">★★★★☆</div><p>"The houseboat experience in Alleppey was peaceful and romantic."</p><strong>- Priya</strong></div>
+    <div class="review-card"><div class="stars">★★★★★</div><p>"Goa beaches were fun and vibrant. Perfect vacation spot!"</p><strong>- Raj</strong></div>
+    <div class="review-card"><div class="stars">★★★★★</div><p>"Ranthambore Safari was thrilling! Saw tigers up close."</p><strong>- Meera</strong></div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Great services and personal touch. Highly recommend!"</p>
+          <p><strong>- Rahul K.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUIDES -->
+    <div class="guides">
+      <h2>Meet Our Guide</h2>
+      <div class="guide-grid">
+        <div class="member">
+          <img src="g3.jpeg" alt="Grace - Personal Guide">
+          <h3>Grace</h3>
+          <p><b>Senior Personal Guide</b></p>
+          <p>Grace has over 12 years of experience guiding travelers across India’s hidden gems and iconic destinations. With her deep cultural knowledge, friendly nature, and attention to detail, she ensures every guest enjoys an unforgettable journey tailored to their needs.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 Dream Destination Travel Co.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a> |
+      <a href="destination.html">Destinations</a> |
+      <a href="guide.html">Guide</a> |
+      <a href="contact.html">Contact</a>
+    </div>
+    <p>Email: info@dreamdestination.com | Phone: +91 9876543210</p>
+  </footer>
+
+  <!-- ===== CHATBOX ===== -->
+  <div id="chat-toggle-btn">💬 Chat with Us</div>
+  <div id="ai-chatbox">
+    <header>AI Travel Assistant</header>
+    <div class="chat-messages">
+      <div class="bot-message">Hello! 👋 How can I help you today?</div>
+    </div>
+    <input type="text" id="userInput" placeholder="Type your message...">
+    <button id="sendBtn">Send</button>
+  </div>
+  <script>
+    const chatToggleBtn = document.getElementById("chat-toggle-btn");
+    const chatbox = document.getElementById("ai-chatbox");
+    const sendBtn = document.getElementById("sendBtn");
+    const userInput = document.getElementById("userInput");
+    const chatMessages = document.querySelector(".chat-messages");
+
+    chatToggleBtn.addEventListener("click", () => {
+      chatbox.style.display = chatbox.style.display === "flex" ? "none" : "flex";
+    });
+
+    sendBtn.addEventListener("click", sendMessage);
+    userInput.addEventListener("keypress", function(e) {
+      if (e.key === "Enter") sendMessage();
+    });
+
+    function sendMessage() {
+      const msg = userInput.value.trim();
+      if (msg === "") return;
+      const userMsgDiv = document.createElement("div");
+      userMsgDiv.classList.add("user-message");
+      userMsgDiv.textContent = msg;
+      chatMessages.appendChild(userMsgDiv);
+      userInput.value = "";
+
+      // bot reply
+      setTimeout(() => {
+        const botMsgDiv = document.createElement("div");
+        botMsgDiv.classList.add("bot-message");
+        botMsgDiv.textContent = "Thanks for your message! We'll get back shortly.";
+        chatMessages.appendChild(botMsgDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }, 800);
+
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+  </script>
+
+</body>
+</html>

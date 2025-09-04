@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Website</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f6fa;
+      color: #333;
+    }
+
+    /* Navbar */
+    nav {
+      background: #222;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h1 {
+      color: #fff;
+      font-size: 22px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #ddd;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #f39c12;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 50vh;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+    }
+
+    /* Cards Section */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .card button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      background: #2575fc;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .card button:hover {
+      background: #6a11cb;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: #bbb;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <h1>My MiniSite</h1>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Welcome to My Mini Website</h2>
+    <p>Hover over the cards below to see the effects!</p>
+  </section>
+
+  <!-- Cards Section -->
+  <section class="cards">
+    <div class="card">
+      <h3>Web Design</h3>
+      <p>Create beautiful and responsive websites with modern CSS effects.</p>
+      <button>Learn More</button>
+    </div>
+    <div class="card">
+      <h3>Development</h3>
+      <p>Build fast and secure applications using latest technologies.</p>
+      <button>Learn More</button>
+    </div>
+    <div class="card">
+      <h3>SEO</h3>
+      <p>Optimize your site for search engines and reach more people.</p>
+      <button>Learn More</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 My MiniSite. All rights reserved.</p>
+  </footer>
+</body>
+</html>

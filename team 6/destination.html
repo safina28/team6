@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>India Travel - Destinations</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #fdfdfd;
+      color: #333;
+    }
+
+    /* ===== NAVBAR ===== */
+    header {
+      background: linear-gradient(90deg, goldenrod, #ffcc33);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header img { height: 55px; }
+    nav { display: flex; align-items: center; gap: 20px; }
+    nav a {
+      text-decoration: none; color: white; font-weight: bold;
+      padding: 8px 14px; border-radius: 6px; transition: 0.3s;
+    }
+    nav a:hover { background: white; color: goldenrod; }
+
+    header h2 { color: white; font-size: 22px; margin: 0; }
+
+    /* ===== GRID CARDS ===== */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .card {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      background: white;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .card-title {
+      padding: 12px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+      background: rgba(255, 215, 0, 0.9);
+      color: #333;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+    .card-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.55);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      padding: 20px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .card:hover .card-overlay { opacity: 1; }
+    .card:hover { transform: scale(1.05); box-shadow: 0 12px 25px rgba(0,0,0,0.3); }
+    .card:hover img { transform: scale(1.15); }
+
+    /* ===== SECTION HEADINGS ===== */
+    section h3 {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: goldenrod;
+      font-size: 26px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      margin-top: 50px;
+      color: #fff;
+      background: #333;
+      border-top: 4px solid goldenrod;
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .footer-links a { color: #ffe082; margin: 0 10px; text-decoration: none; }
+    .footer-links a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <img src="dd.jpg" alt="Dream Destination Logo">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="destination.html">Destinations</a>
+    <a href="about.html">Explore</a>
+    <a href="guide.html">Personal Guide</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- PAGE HEADING -->
+<header style="padding:10px; text-align:center;">
+  <h2 style="color:black; font-size:32px;">Explore India’s Top 50 Travel Destinations</h2>
+  <p style="max-width:800px; margin:auto; font-size:18px; line-height:1.6;">
+    Experience India’s diversity — royal palaces, Himalayan peaks, sacred temples, serene beaches, and enchanting islands. Hover over each card for more details!
+  </p>
+</header>
+
+<!-- DESTINATIONS -->
+<section>
+  <h3>North India</h3>
+  <div class="grid-container">
+    <div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg"><div class="card-title">Agra (Taj Mahal)</div><div class="card-overlay">Symbol of eternal love, one of the Seven Wonders of the World.</div></div>
+
+    <div class="card"><img src="jai.jpeg"><div class="card-title">Jaipur (Pink City)</div><div class="card-overlay">Heritage forts, palaces, and vibrant Rajasthani culture.</div></div>
+
+    <div class="card"><img src="Kash.jpeg"><div class="card-title">Kashmir Valley</div><div class="card-overlay">Paradise on Earth with lakes, gardens, and snowy mountains.</div></div>
+
+    <div class="card"><img src="Wonderful Golden temple at Sunset, Amritsar - Harmandir Sahib - the holiest of all Sikh places of worship.jpeg"><div class="card-title">Amritsar (Golden Temple)</div><div class="card-overlay">Sacred Sikh shrine with shimmering golden architecture.</div></div>
+
+    <div class="card"><img src="Leh ladakh.jpeg"><div class="card-title">Leh-Ladakh</div><div class="card-overlay">High-altitude desert, monasteries, and adventure trails.</div></div>
+
+    <div class="card"><img src="Shimla, Himachal Pradesh.jpeg"><div class="card-title">Shimla</div><div class="card-overlay">Charming hill station with colonial heritage and snow peaks.</div></div>
+
+    <div class="card"><img src="Varanasi at Twilight_ A River of Light and Devotion.jpeg"><div class="card-title">Varanasi</div><div class="card-overlay">Spiritual capital of India, sacred Ganga aarti rituals.</div></div>
+
+    <div class="card"><img src="Nainital.jpeg"><div class="card-title">Nainital</div><div class="card-overlay">Lakeside beauty with hills, boating, and serene escapes.</div></div>
+
+    <div class="card"><img src="Manali.jpeg"><div class="card-title">Manali</div><div class="card-overlay">Adventure hotspot for trekking, skiing, and paragliding.</div></div>
+
+    <div class="card"><img src="'Quite a View', India, Mt_ Abu, Sunset Point.jpeg"><div class="card-title">Mount Abu</div><div class="card-overlay">Rajasthan’s only hill station, home to Dilwara temples.</div></div>
+  </div>
+</section>
+
+<section>
+  <h3>South India</h3>
+  <div class="grid-container">
+    <div class="card"><img src="Kerala Backwaters Bliss_ A Tranquil Houseboat Cruise.jpeg"><div class="card-title">Kerala Backwaters</div><div class="card-overlay">Houseboats, palm-fringed canals, and serene lagoons.</div></div>
+
+    <div class="card"><img src="Mysore Palace_.jpeg"><div class="card-title">Mysore Palace</div><div class="card-overlay">Royal palace with Indo-Saracenic grandeur.</div></div>
+
+    <div class="card"><img src="Madurai Meenakshi amman temple.jpeg"><div class="card-title">Madurai</div><div class="card-overlay">Famous Meenakshi Temple, cultural capital of Tamil Nadu.</div></div>
+
+    <div class="card"><img src="Hampi, Karnataka.jpeg"><div class="card-title">Hampi</div><div class="card-overlay">UNESCO ruins of Vijayanagara Empire’s temples and markets.</div></div>
+
+    <div class="card"><img src="hy.jpeg"><div class="card-title">Hyderabad</div><div class="card-overlay">Charminar, biryani, and heritage blended with modernity.</div></div>
+
+    <div class="card"><img src="Goa.jpeg"><div class="card-title">Goa</div><div class="card-overlay">Golden beaches, nightlife, Portuguese architecture.</div></div>
+
+    <div class="card"><img src="pondicherry aesthetic 🌊.jpeg"><div class="card-title">Pondicherry</div><div class="card-overlay">French colonial charm, beaches, and cafes.</div></div>
+
+    <div class="card"><img src="download (19).jpeg"><div class="card-title">Ooty</div><div class="card-overlay">Cool Nilgiri hill station with tea gardens.</div></div>
+
+    <div class="card"><img src="Lost in the Clouds, Found in Kodaikanal! ☁️ Hit ❤️ if you crave misty mornings.jpeg"><div class="card-title">Kodaikanal</div><div class="card-overlay">Mist-covered hills and beautiful star-shaped lake.</div></div>
+
+    <div class="card"><img src="Coorg.jpeg"><div class="card-title">Coorg</div><div class="card-overlay">Scotland of India, famous for coffee and waterfalls.</div></div>
+  </div>
+</section>
+
+<section>
+  <h3>East India</h3>
+  <div class="grid-container">
+    <div class="card"><img src="Kolkata Street photography Howrah bridge.jpeg"><div class="card-title">Kolkata</div><div class="card-overlay">City of Joy, colonial landmarks, and vibrant culture.</div></div>
+
+    <div class="card"><img src="Konark Sun Temple.jpeg"><div class="card-title">Konark</div><div class="card-overlay">Famed Sun Temple, a masterpiece of stone carvings.</div></div>
+
+    <div class="card"><img src="Darjeeling.jpeg"><div class="card-title">Darjeeling</div><div class="card-overlay">Tea gardens, toy train, and Mt. Kanchenjunga views.</div></div>
+
+    <div class="card"><img src="Kaziranga Rahino.jpeg"><div class="card-title">Kaziranga</div><div class="card-overlay">Home to one-horned rhinos and diverse wildlife.</div></div>
+
+    <div class="card"><img src="Gangtok.jpeg"><div class="card-title">Gangtok</div><div class="card-overlay">Gateway to Sikkim with monasteries and mountains.</div></div>
+
+    <div class="card"><img src="Sundarbans National Park Bangladesh.jpeg"><div class="card-title">Sundarbans</div><div class="card-overlay">Mangrove forests, Bengal tigers, and unique wildlife.</div></div>
+
+    <div class="card"><img src="Bhubaneswar _ Odisha.jpeg"><div class="card-title">Bhubaneswar</div><div class="card-overlay">Temple city of India, blend of tradition and modernity.</div></div>
+
+    <div class="card"><img src="📍Shillong, Meghalaya_.jpeg"><div class="card-title">Shillong</div><div class="card-overlay">Scotland of the East, waterfalls and music culture.</div></div>
+
+    <div class="card"><img src="Taktsang Gompa⛩️🪷.jpeg"><div class="card-title">Tawang</div><div class="card-overlay">Arunachal gem with ancient monastery and snow peaks.</div></div>
+  </div>
+</section>
+
+<section>
+  <h3>West & Central India</h3>
+  <div class="grid-container">
+    <div class="card"><img src="Rann Of Kutch, Part Of Thar Desert,Kutch District,Gujarat, India 🇮🇳   Indo - Pakistan Internation.jpeg"><div class="card-title">Rann of Kutch</div><div class="card-overlay">White salt desert famous for Rann Utsav.</div></div>
+
+    <div class="card"><img src="mumbai.jpeg"><div class="card-title">Mumbai</div><div class="card-overlay">Financial hub with Gateway of India and Bollywood.</div></div>
+
+    <div class="card"><img src="Udaipur City Palace.jpeg"><div class="card-title">Udaipur</div><div class="card-overlay">City of Lakes with romantic palaces.</div></div>
+
+    <div class="card"><img src="Beautiful Temple in Khajuraho.jpeg"><div class="card-title">Khajuraho</div><div class="card-overlay">World-famous temples with intricate sculptures.</div></div>
+
+    <div class="card"><img src="C:\Users\contr\Downloads\Beauty of Jaisalmer Fort_ A Timeless Marvel in the Heart of Rajasthan.jpeg"><div class="card-title">Jaisalmer</div><div class="card-overlay">Golden city with desert fort and dunes.</div></div>
+
+    <div class="card"><img src="download (18).jpeg"><div class="card-title">Ajanta Caves</div><div class="card-overlay">Buddhist cave paintings from 2nd century BCE.</div></div>
+
+    <div class="card"><img src="Ellora caves, India_.jpeg"><div class="card-title">Ellora Caves</div><div class="card-overlay">Rock-cut temples of Hindu, Buddhist, and Jain faiths.</div></div>
+
+    <div class="card"><img src="Great Stupa_ Sanchi, Madhya Pradesh, India.jpeg"><div class="card-title">Sanchi</div><div class="card-overlay">Ancient Buddhist stupa built by Emperor Ashoka.</div></div>
+    <div class="card"><img src="Gir national park, Gujarat, India.jpeg"><div class="card-title">Gir National Park</div><div class="card-overlay">Only natural habitat of Asiatic lions.</div></div>
+
+    <div class="card"><img src="Old city, Ahmedabad.jpeg"><div class="card-title">Ahmedabad</div><div class="card-overlay">Historic city, Sabarmati Ashram, and textiles.</div></div>
+  </div>
+</section>
+
+<section>
+  <h3>Islands & Beaches</h3>
+  <div class="grid-container">
+    <div class="card"><img src="download (17).jpeg"><div class="card-title">Andaman Islands</div><div class="card-overlay">Tropical paradise with coral reefs and beaches.</div></div>
+
+    <div class="card"><img src="Lakshadweep view  wallpaper.jpeg"><div class="card-title">Lakshadweep</div><div class="card-overlay">Scenic islands with lagoons and marine life.</div></div>
+    <div class="card"><img src="OM beach in Gokarna,Karnataka.jpeg"><div class="card-title">Gokarna</div><div class="card-overlay">Laidback beach town with sacred temples.</div></div>
+    
+<div class="card"><img src="8 Amazing Places To Visit Near Marina Beach Of Chennai.jpeg"><div class="card-title">Chennai (Marina Beach)</div><div class="card-overlay">Longest natural urban beach in India.</div></div>
+
+    <div class="card"><img src="Varkala kerala beach.jpeg"><div class="card-title">Varkala</div><div class="card-overlay">Cliffside beach in Kerala with scenic views.</div></div>
+
+    <div class="card"><img src="Discover the serene beauty of Puri Sea Beach! 🌊🌅.jpeg"><div class="card-title">Puri Beach</div><div class="card-overlay">Spiritual and scenic beach destination in Odisha.</div></div>
+
+    <div class="card"><img src="64c94930-a104-4eac-9405-a19794953693.jpeg"><div class="card-title">Diu</div><div class="card-overlay">Portuguese forts and serene beaches.</div></div>
+
+    <div class="card"><img src="KK.jpeg"><div class="card-title">Kanyakumari</div><div class="card-overlay">Southern tip of India where 3 seas meet.</div></div>
+
+    <div class="card"><img src="MANGALORE BEACH.jpeg"><div class="card-title">Mangalore</div><div class="card-overlay">Cultural port city with uncrowded beaches.</div></div>
+
+    <div class="card"><img src="Alappuzha beach🏖.jpeg"><div class="card-title">Alappuzha Beach</div><div class="card-overlay">Historic pier, boats, and golden sands of Kerala.</div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 Dream Destination. All Rights Reserved.</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a>|
+    <a href="destination.html">Destinations</a>|
+    <a href="about.html">About</a>|
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
